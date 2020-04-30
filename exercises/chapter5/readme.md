@@ -15,12 +15,16 @@ Generate some structs that will hold the information about
 -  and the Gamefield
 
 Your Monster and Hero structs should hold information about
+-
+
 - name
 - HP
 - damage it is able to deal
 - position on the gamefield in (x,y) form
 
 Your gamefield should hold information about
+-
+
 - the gamefield itself
   - **Hint:** your gamefield should be able to be generated dynamically at runtime, so best use Vectors
 - the size of the gamefield
@@ -45,3 +49,6 @@ Your monster needs to have a special ability to make the fight more interesting.
 This special ability will be a **cloning ability**. Once the monster reaches a certain HP threshold (e.g. 50 HP), it should automatically clone itself and place a copy of itself with only a different name and slightly waker next itself.
 
 Which ability of structs would be suitable to use here?
+
+# Notes
+You will find a skeleton file in the exercises folder which could give you some hints on the structure of the code, but feel free to find your own solutions!
