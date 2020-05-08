@@ -5,13 +5,19 @@ struct Hero {
 }
 // Let Hero spawn, attack and move
 impl Hero {
-    // fn spawn(...) -> ... {
-    //
+    // fn spawn(gamefield: &mut Gamefield, name: String, hp: i64, damage: i64, mut position: (i32, i32)) -> Hero {
+    // ...your Code here
+    // Hero {
+    //  name,
+    //  hp,
+    //  damage,
+    //  position,
     // }
-    // fn attack(...) {
+    // }
+    // fn attack(&self, enemy: &mut Monster, gamefield: &mut Gamefield) {
     //     ...
     // }
-    // fn move_hero(...) {
+    // fn move_hero(&mut self, gamefield: &mut Gamefield, direction: &str) {
     //     ...
     // }
 }
@@ -23,18 +29,28 @@ struct Monster {
 }
 // Let Monster spawn, attack and move
 impl Monster {
-    // fn spawn(...) -> ... {
-    //     ...
+    // fn spawn(gamefield: &mut Gamefield, name: String, hp: i64, damage: i64, mut position: (i32, i32)) -> Monster {
+    // ...your Code here
+    // Hero {
+    //  name,
+    //  hp,
+    //  damage,
+    //  position,
+    // }
     // }
     //
-    // fn attack(...) {
+    // fn attack(&self, hero: &mut Hero) {
     //     ...
     // }
-    // fn move_monster(...) {
-    //    ...
+    // fn move_monster(&mut self, gamefield: &mut Gamefield, direction: &str) {
+    //     More code here...
+    // gamefield.field[old_pos.0 as usize][old_pos.1 as usize] = '#';
+    // gamefield.field[self.position.0 as usize][self.position.1 as usize] = 'M';
+    // Gamefield::display(gamefield.clone());
+    //
     // }
     // // Make monster cloneable
-    // fn clone(...) {
+    // fn clone(to_clone: &Monster, gamefield: &mut Gamefield) {
     //     ...
     // }
 }
@@ -45,10 +61,10 @@ struct Gamefield {
 }
 
 impl Gamefield {
-    // fn create(...) -> ... {
+    // fn create(size: usize) -> Gamefield {
     //    ...
     // }
-    // fn display(...) {
+    // fn display(gamefield: Gamefield) {
     //     ...
     // }
 }
@@ -56,19 +72,19 @@ impl Gamefield {
 
 fn main() {
     // Create Gamefield
-    // let mut gamefield = ...;
+    let mut gamefield = Gamefield::create(8);
     // Spawn a hero
-    // let mut hero = ...
+    let mut hero_peter = Hero::spawn(&mut gamefield, String::from("Peter"), 100, 10, (0, 0));
 
-    // Spawn a Monster
-    // let mut monster = ...
+
+    // // Spawn a Monster
+    let mut monster_1 = Monster::spawn(&mut gamefield, String::from("Monster1"), 54, 10, (7, 8));
 
     // Let them fight, and clone a monster
-    // hero.attack(...);
-    // monster_1.attack(...);
-    // Move hero and mosnter
-    // hero.move_hero(...);
-    // monster_1.move_monster(...);
+    hero_peter.attack(&mut monster_1, &mut gamefield);
+    monster_1.attack(&mut hero_peter);
+    //
+    hero_peter.move_hero(&mut gamefield, "up");
 }
 
 

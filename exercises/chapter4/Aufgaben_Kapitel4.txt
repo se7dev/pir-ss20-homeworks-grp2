@@ -1,0 +1,113 @@
+Aufgabe 1:
+
+Im folgenden zeigen wir ein paar Code Beispiele, die nicht kompilieren. Reparieren sie diese Beispiele.
+Hinweis: Aenderungen sind immer nur an EXAKT einer Stelle im Code zu machen.
+
+Bsp 1:
+
+fn main() {
+    let vec0 = Vec::new();
+
+    let vec1 = fill_vec(vec0);
+
+    println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+
+    vec1.push(88);
+
+    println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+}
+
+fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
+    let mut vec = vec;
+
+    vec.push(22);
+    vec.push(44);
+    vec.push(66);
+
+    vec
+}
+
+Bsp 2:
+
+fn main() {
+    let vec0 = Vec::new();
+
+    let mut vec1 = fill_vec(vec0);
+
+    // Do not change the following line!
+    println!("{} has length {} content `{:?}`", "vec0", vec0.len(), vec0);
+
+    vec1.push(88);
+
+    println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+}
+
+fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
+    let mut vec = vec;
+
+    vec.push(22);
+    vec.push(44);
+    vec.push(66);
+
+    vec
+}
+
+Bsp 3:
+
+fn main() {
+    let vec0 = Vec::new();
+
+    let mut vec1 = fill_vec(vec0);
+
+    println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+
+    vec1.push(88);
+
+    println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+}
+
+fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
+    vec.push(22);
+    vec.push(44);
+    vec.push(66);
+
+    vec
+}
+
+
+Aufgabe 2:
+
+In der Praesentation wurden String-Slices am Beispiel der Funktion first_word erklaert, bauen sie das Beispiel nach und schreiben sie eine Funktion second_word unter Verwendung von String-Slices, wenn es kein 2. Wort gibt wird nachwievor der ganze String zurueckgegeben.
+
+Aufgabe 3:
+
+Erstellen sie ein Array mit i32 Werten, veraendern sie das Array an verschiedenen Stellen (nicht nur die erste!) unter Verwendung der folgenden Funktion:
+
+fn change_slice(slice:&mut [i32], value: i32) {
+    slice[0] = value;
+}
+
+Aufgabe 4:
+
+Veraendern sie den unten stehenden Code so, dass der Vector, bei der Ausgabe, die Zahlen 40, 50 und 60 enthaelt. Verwenden sie dafuer einmal die "unschoene" Methode unter ausschliesslicher Verwendung der Ownership. Huebschen sie den Code anschliessend mittels Borrowing auf.
+
+fn main() {
+    let vec0 = Vec::new();
+    
+    ...
+    
+    println("{:?}", vec0);
+}
+
+fn push_on_stack(...) {
+    
+}
+
+Aufgabe 5:
+
+Schreiben sie eine Funktion, die ein String-Slice entgegen nimmt, diesen Ausgibt und sich selbst rekursiv so aufruft, dass immer an letzter Stelle ein Buchstabe abgeschnitten wird. Das Ergebnis fuer den String "hallo" saehe dann so aus:
+hallo
+hall
+hal
+ha
+h
