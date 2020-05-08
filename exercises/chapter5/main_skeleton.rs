@@ -125,3 +125,42 @@ mod game_tests{
 
     }
 }
+
+
+// Tests
+#[cfg(test)]
+mod game_tests{
+    use crate::{Hero, Gamefield, Monster};
+
+    #[test]
+    fn test_gamefield(){
+        // Are gamefields initialized successfully?
+        let gfield = Gamefield::create(8);
+        assert!(gfield.size == 8);
+        assert!(gfield.field[0][0] == '#');
+    }
+
+    #[test]
+    fn test_hero_monster_structs(){
+        let mut gfield = Gamefield::create(8);
+        let mut test_hero = Hero::spawn(&mut gfield, String::from("Peter"), 100, 10, (0, 0));
+
+        // Is your hero correctly initialized?
+        assert!(test_hero.damage == 10);
+        assert!(test_hero.hp == 100);
+        assert!(test_hero.position == (0,0));
+        assert!(test_hero.name == String::from("Peter"));
+
+        // Does attack work as intended?
+        let mut monster_1 = Monster::spawn(&mut gfield, String::from("Monster1"), 100, 10, (7, 8));
+
+        test_hero.attack(&mut monster_1, &mut gfield);
+
+        assert!(monster_1.hp == 90);
+
+        monster_1.attack(&mut test_hero);
+
+        assert!(test_hero.hp == 90);
+
+    }
+}
