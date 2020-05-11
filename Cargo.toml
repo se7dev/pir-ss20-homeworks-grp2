@@ -6,7 +6,7 @@ edition = "2018"
 
 [[bin]]
 name = "chapter5_main_rs"
-path = "exercises/chapter5/main.rs"
+path = "exercises/chapter5/main_skeleton.rs"
 
 [[bin]]
 name = "chapter4_task1_1"
