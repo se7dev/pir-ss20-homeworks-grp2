@@ -5,10 +5,6 @@ authors = ["Sebastian <37550703+se7dev@users.noreply.github.com>"]
 edition = "2018"
 
 [[bin]]
-name = "chapter5_main_rs"
-path = "exercises/chapter5/main.rs"
-
-[[bin]]
 name = "chapter4_task1_1"
 path = "exercises/chapter4//Task1_1.rs"
 
@@ -35,6 +31,11 @@ path = "exercises/chapter4/Task4.rs"
 [[bin]]
 name = "chapter4_task5"
 path = "exercises/chapter4/Task5.rs"
+
+[[bin]]
+name = "chapter5_main_rs"
+path = "exercises/chapter5/main.rs"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
