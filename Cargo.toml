@@ -32,6 +32,11 @@ path = "exercises/chapter4/Task4.rs"
 name = "chapter4_task5"
 path = "exercises/chapter4/Task5.rs"
 
+[[bin]]
+name = "chapter5_main_rs"
+path = "exercises/chapter5/main.rs"
+
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
